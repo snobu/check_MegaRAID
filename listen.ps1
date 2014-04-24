@@ -3,6 +3,7 @@
 
 $port = 63560
 
+# Socket IO mostly copied from http://poshcode.org/4601
 function listen-port ($port) {
     $endpoint = new-object System.Net.IPEndPoint ([system.net.ipaddress]::any, $port)
     $listener = new-object System.Net.Sockets.TcpListener $endpoint
