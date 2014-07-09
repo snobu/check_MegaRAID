@@ -1,7 +1,7 @@
 check_MegaRAID
 ==============
 
-Schedule the job:
+Schedule the job (Run from elevated Powershell):
 
 ```
 $listen = 'c:\scripts\listen.ps1'
