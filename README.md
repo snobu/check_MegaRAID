@@ -7,9 +7,8 @@ Schedule the job:
 $listen = 'c:\scripts\listen.ps1'
 $taskName = 'Listen_TCP'
     
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File $listen" `
-                                                            -Name $taskName `
-                                                            -ExecutionPolicy Bypass
+$action = New-ScheduledTaskAction -Execute 'powershell.exe' `
+                                  -Argument "-File $listen -ExecutionPolicy Bypass"
                                                                 
 $trigger = New-ScheduledTaskTrigger -AtStartup -RandomDelay 00:00:30
     
@@ -23,5 +22,6 @@ Register-ScheduledTask -TaskName $taskName `
                        -Action $action `
                        -Trigger $trigger `
                        -Settings $settings `
-                       -User 'SYSTEM'
+                       -User 'SYSTEM' `
+                       -Force
 ```
